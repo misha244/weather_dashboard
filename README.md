@@ -8,7 +8,7 @@
 
 ## Project Link
 
-[_View my project here_]()
+[_View my project here_](https://misha244.github.io/weather_dashboard)
 
 ## About my Project
 
