@@ -47,7 +47,7 @@ const fetchAllWeatherData = (cityName) => {
   const weatherApiUrl = new URL(
     "http://api.openweathermap.org/data/2.5/weather?q=" +
       cityName +
-      "&appid" +
+      "&appid=" +
       APIkey
   );
 
@@ -58,7 +58,17 @@ const fetchAllWeatherData = (cityName) => {
   const functionForApplication = (dataFromServer) => {
     // whatever your application code is goes here
     // 1. from the dataFromServer get the lat and lon
+    const lat = dataFromServer.coord.lat;
+    const lon = dataFromServer.coord.lon;
     // 2. use lat lon to construct https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={API_KEY} and store in variable called oneApiUrl
+    const oneApiUrl = new URL(
+      "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+        lat +
+        "&lon=" +
+        lon +
+        "&appid=" +
+        APIkey
+    );
 
     const functionForJSON = (responseObject) => {
       // unless you have some logic here do that before you return
