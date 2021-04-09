@@ -9,17 +9,19 @@ const renderCities = (citiesFromLocalStorage) => {
 
 const constructListItem = () => {};
 
-const getCurrentData = (opeApiData) => {
-  // from object extract the data points you need for the return data
-  return {
-    name: "",
-    date: "",
-    iconURL: "",
-    temperature: "",
-    humidity: "",
-    windSpeed: "",
-    uvIndex: 0,
+const getCurrentData = (cityName, currentData) => {
+  // extract data from current data
+  const data = {
+    name: cityName,
+    date: getDate(currentData.dt),
+    iconURL: getIconUrl(currentData.weather),
+    temperature: currentData.temp,
+    humidity: currentData.humidity,
+    windSpeed: currentData.wind_speed,
+    uvIndex: currentData.uvi,
   };
+
+  return data;
 };
 
 const getForecastData = (opeApiData) => {
