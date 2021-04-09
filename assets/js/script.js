@@ -1,6 +1,13 @@
+// declare API key
+const APIkey = "12197a025c93ca0e295dc1dd5f7a68c1";
+
+// For each city construct a list item and append to the list group
 const renderCities = (citiesFromLocalStorage) => {
-  // For each city construct a list item and append to the list group
+  citiesFromLocalStorage.reverse();
+  $(citiesFromLocalStorage).each(constructListItem);
 };
+
+const constructListItem = () => {};
 
 const getCurrentData = (opeApiData) => {
   // from object extract the data points you need for the return data
@@ -38,7 +45,7 @@ const renderForecastCardComponent = (forecastData) => {
 const fetchAllWeatherData = (cityName) => {
   // construct URL for http://api.openweathermap.org/data/2.5/weather?q={CITY_NAME}&appid={API_KEY} and store in variable called as weatherApiUrl
   const weatherApiUrl = new URL(
-    "http://api.openweathermap.org/data/2.5/weather?q={CITY_NAME}&appid={API_KEY}"
+    "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid" + APIkey;
   );
 
   const functionForJSON = (responseObject) => {
@@ -89,8 +96,11 @@ const onLoad = () => {
 };
 
 // function called when the form is submitted
-const onSubmit = () => {
+const onSubmit = (event) => {
+  event.preventDefault();
   // get city name and store in variable called cityName
+  const cityName = $("#city-name");
+
   // fetchAllWeatherData(cityName)
 };
 
