@@ -45,7 +45,10 @@ const renderForecastCardComponent = (forecastData) => {
 const fetchAllWeatherData = (cityName) => {
   // construct URL for http://api.openweathermap.org/data/2.5/weather?q={CITY_NAME}&appid={API_KEY} and store in variable called as weatherApiUrl
   const weatherApiUrl = new URL(
-    "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid" + APIkey;
+    "http://api.openweathermap.org/data/2.5/weather?q=" +
+      cityName +
+      "&appid" +
+      APIkey
   );
 
   const functionForJSON = (responseObject) => {
@@ -62,13 +65,18 @@ const fetchAllWeatherData = (cityName) => {
       return responseObject.json();
     };
     const functionForApplication = (dataFromServer) => {
-      // whatever your application code is goes here
       // call a function getCurrentData() to get the current data from dataFromServer
       // getCurrentData()  and store in currentData
       // getForecastData() and store in forecastData
+      const currentData = getCurrentData(cityName, dataFromServer.current);
+      const forecastData = dataFromServer.daily.map(getForecastData);
+
       // renderCurrentCardComponent(currentData);
       // renderForecastCardComponent(forecastData);
+      renderCurrentCard(currentData);
+      forecastData.forEach(renderForecastCard);
     };
+
     const functionToHandleError = (errorObject) => {
       // handle your error here according to your application
     };
@@ -106,7 +114,7 @@ const onSubmit = (event) => {
 
 const onClick = () => {
   // get city name from the list item that was clicked and store in variable called cityName
-  // fetchAllWeatherData(cityName)
+  fetchAllWeatherData(cityName);
 };
 
 $("#target-your-list-items").click(onClick);
