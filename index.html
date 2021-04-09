@@ -27,25 +27,29 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 bg-light">
-          <h5 class="mt-1">Search by City:</h5>
-          <div class="input-group mb-3">
-            <input
-              id="enter-city"
-              type="text"
-              class="form-control"
-              placeholder="Please enter city"
-            />
-            <div class="input-group-append">
-              <button type="button" id="search-button" class="btn btn-primary">
-                <i class="fas fa-search-location"></i>
-              </button>
+          <form id="history">
+            <h5 class="mt-1">Search by City:</h5>
+            <div class="input-group mb-3">
+              <input
+                id="enter-city"
+                type="text"
+                class="form-control"
+                placeholder="Please enter city"
+              />
+              <div class="input-group-append">
+                <button
+                  type="button"
+                  id="search-button"
+                  class="btn btn-primary"
+                >
+                  <i class="fas fa-search-location"></i>
+                </button>
+              </div>
             </div>
-          </div>
-          <button type="button" id="clear-history" class="btn btn-primary mb-3">
-            Clear history
-          </button>
-          <form id="history"></form>
+          </form>
+          <ul class="list-group"></ul>
         </div>
+
         <div class="col-lg-9">
           <div class="row mr-0">
             <div class="col-lg-11 card m-3 d-none" id="today-weather">
