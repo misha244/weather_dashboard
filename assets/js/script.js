@@ -71,11 +71,26 @@ const onSubmit = async (event) => {
 };
 
 const renderAllCards = async (cityName) => {
-  const currentDayUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`;
+  const currentDayUrl =
+    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    cityName +
+    "&appid=" +
+    API_KEY +
+    "&units=metric";
 
   const currentDayResponse = await fetchData(currentDayUrl);
 
-  const forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${currentDayResponse.coord.lat}&lon=${currentDayResponse.coord.lon}&exclude=minutely,hourly&units=metric&appid=${API_KEY}`;
+  const lat = currentDayResponse.coord.lat;
+  const lon = currentDayResponse.coord.lon;
+
+  const forecastUrl =
+    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+    lat +
+    "&lon=" +
+    lon +
+    "&appid=" +
+    API_KEY +
+    "&units=metric";
 
   const forecastResponse = await fetchData(forecastUrl);
 
