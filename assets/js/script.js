@@ -116,7 +116,6 @@ const renderCitiesFromLocalStorage = () => {
   $("#searched-cities").append(ul);
 };
 
-// FIX this function with the right class names and threshold values and then use in renderCurrentDayCard()
 const getUvIndexClass = (uvIndex) => {
   if (uvIndex < 2) {
     return "uv p-2 bg-primary text-dark";
