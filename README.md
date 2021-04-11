@@ -20,16 +20,16 @@ This is a weather forecast dashboard app. Users are able to enter a city name in
 
 ![](/assets/images/landing_page.png)
 
-#### Search example 1
+#### Search example 1 - Low UV index
 
-![](/assets/images/sofia.png)
+![](/assets/images/lisbon.png)
 
-#### Search example 2
+#### Search example 2 - Med UV index
+
+![](assets/images/buenos_aires.png)
+
+#### Search example 3 - High UV index
 
 ![](/assets/images/miami.png)
-
-#### Search History
-
-![](/assets/images/searched_list.png)
 
 ## Fin
