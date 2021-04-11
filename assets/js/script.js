@@ -133,11 +133,11 @@ const renderCitiesFromLocalStorage = () => {
 
 const getUvIndexClass = (uvIndex) => {
   if (uvIndex < 2) {
-    return "uv p-2 bg-primary text-dark";
-  } else if (uvIndex > 2) {
+    return "uv p-2 bg-success text-dark";
+  } else if (uvIndex > 5) {
     return "uv p-2 bg-danger text-dark";
   } else {
-    return "";
+    return "uv p-2 bg-warning text-dark";
   }
 };
 
