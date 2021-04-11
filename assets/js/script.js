@@ -72,7 +72,7 @@ const onSubmit = async (event) => {
 
 const renderAllCards = async (cityName) => {
   const currentDayUrl =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
     "&appid=" +
     API_KEY +
